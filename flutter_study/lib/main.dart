@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_study/demo/navigator_demo.dart';
 import 'model/post.dart';
+import 'demo/navigator_demo.dart';
 
 void main() => runApp(App());
 
@@ -7,7 +9,12 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      // home: NavigatorDemo(),
+      initialRoute: '/about',
+      routes: {
+        '/': (context) => NavigatorDemo(),
+        '/about': (context) => Page(title: 'About'),
+      },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
       ),
